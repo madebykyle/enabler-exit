@@ -1,0 +1,22 @@
+    //include either in your main js section or the document header
+    <script type="text/javascript">
+     function bgExitHandler(e) {
+     Enabler.exit('Background Exit');
+    }
+    </script>
+//include in the css of your creative make sure the z-index is the highest level in the creative
+    #bg-exit {
+      background-color: rgba(255,255,255,0);
+      cursor: pointer;
+      height: 100%;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      z-index: 1000;
+    }
+//include either right after you open your container or the document body (depending on how the creative is set up)
+     <div id="bg-exit"></div>
+
+//call after window.onload (this assigns a click event to the bg-exit and calls your earlier declared function)
+      document.getElementById('bg-exit').addEventListener('click', bgExitHandler, false);
